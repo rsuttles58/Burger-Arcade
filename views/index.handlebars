@@ -1,46 +1,44 @@
-<h1>Burger Time!</h1>
+<div class="container">
+    <h1 class="justify-content-center arcade">Burger Arcade!</h1>
+</div>
+<div class="container justify-content-between">
 
-<div class="parent-container">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h2>Burgers Ready To Be EATEN!</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Burgers Ready To Be EATEN!</h2>
 
-                <ul>
-                    {{#each burgers}}
-                    {{#unless devoured}}
-                    {{> burgers/burgers-block devoured=true}}
-                    {{/unless}}
-                    {{/each}}
-                </ul>
-            </div>
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                {{> burgers/burgers-block devoured=true}}
+                {{/unless}}
+                {{/each}}
+            </ul>
         </div>
-    </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h2>Eaten Burgers</h2>
+        <div class="col-md-4">
+            <h2>Eaten Burgers</h2>
 
-                <ul>
-                    {{#each burgers}}
-                    {{#if devoured}}
-                    {{> burgers/burgers-block devoured=false}}
-                    {{/if}}
-                    {{/each}}
-                </ul>
-            </div>
+            <ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                {{> burgers/burgers-block devoured=false}}
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="col-md-4">
+            <h2>Create your own burger.</h2>
+            <form class="create-burger ">
+
+                <div class="form-group">
+                    <label for="ca">Burger Name:</label>
+                    <input type="text" id="name" name="burger_name">
+                </div>
+
+                <button class="btn-info" type="submit">Add Your Burger Creation!</button>
+            </form>
         </div>
     </div>
 </div>
-
-<h2>Create your own burger.</h2>
-<form class="create-burger">
-
-    <div class="form-group">
-        <label for="ca">Burger Name:</label>
-        <input type="text" id="name" name="burger_name">
-    </div>
-
-    <button type="submit">Add Your Burger Creation!</button>
-</form>
