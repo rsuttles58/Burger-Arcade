@@ -1,5 +1,5 @@
 var mysql = require("mysql");
-var login = require("../login")
+// var login = require("../login")
 var connection;
 
 if (process.env.JAWSDB_URL){
