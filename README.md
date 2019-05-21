@@ -5,7 +5,7 @@ Burger Arcade is a fun burger bar application that allows you to eat and create 
 ## Website Link
 
 ```bash
-https://gentle-mesa-84185.herokuapp.com/
+https://pure-dawn-15597.herokuapp.com/
 ```
 
 If you wish to download the repository and run the code locally, you will need to ensure that you use the package manager (NPM), to install the needed dependencies:
