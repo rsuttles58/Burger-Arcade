@@ -20,3 +20,5 @@ If you wish to download the repository and run the code locally, you will need t
 ## Technical Application Specs
 
 This project utilizes javascript, express, dotenv, ajax, mysql, handlebars, and node.js to render the website.  This project uses an MVC model approach. 
+
+![Burger Arcade](/public/assets/img/burgerarcade.JPG)
