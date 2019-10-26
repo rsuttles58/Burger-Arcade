@@ -4,3 +4,4 @@ VALUES ("Chili Cheese Burger", false),
 ("Pimento Burger", false), 
 ("All American Burger", false),
 ("Nashville Hot Chicken Burger", false)
+/*SQL seed file */

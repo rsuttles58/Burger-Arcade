@@ -2,6 +2,8 @@
 var orm = require("../config/orm.js");
 
 var burger = {
+  //Self-identifying functions will manipulate the burgers model appropriately.
+  //Get all, update one, or select one are options.
   selectAll: function(cb) {
     orm.selectAll("burgers", function(res) {
       cb(res);

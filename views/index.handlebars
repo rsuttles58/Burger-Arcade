@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-4">
             <h2>Burgers Ready To Be EATEN!</h2>
-
+            //On load, all of the burgers will be in this column, unless they have been devoured.
             <ul>
                 {{#each burgers}}
                 {{#unless devoured}}
@@ -18,7 +18,7 @@
 
         <div class="col-md-4">
             <h2>Eaten Burgers</h2>
-
+            //If the burger has been devoured, then it will show up in the eaten burgers column.
             <ul>
                 {{#each burgers}}
                 {{#if devoured}}
@@ -28,6 +28,9 @@
             </ul>
         </div>
 
+        //The third column allows you to create a burger.  
+        //User will enter the label of their burger and then click Add Your Burger Creation to add that burger
+        //to the first column.
         <div class="col-md-4">
             <h2>Create your own burger.</h2>
             <form class="create-burger ">

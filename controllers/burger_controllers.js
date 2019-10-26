@@ -2,6 +2,8 @@ var express = require("express");
 var router = express.Router();
 var burger = require("../models/burger.js");
 
+//routing page. Burger model, router, and express imported.
+//Get route
 router.get("/", function(req, res) {
   burger.selectAll(function(data) {
     var burgerObject = {
@@ -12,6 +14,7 @@ router.get("/", function(req, res) {
   });
 });
 
+//Post route to create a new burger with properties of name and boolean "devoured"
 router.post("/api/burgers", function(req, res) {
   burger.insertOne([
     "burger_name", "devoured"
@@ -22,11 +25,13 @@ router.post("/api/burgers", function(req, res) {
   });
 });
 
+//Put route that updates the burger based on the ID that is passed to the route.
 router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   console.log("condition", condition);
 
+  //ORM call that will actually update the burger database.
   burger.updateOne({
     devoured: req.body.devoured
   }, condition, function(result) {
