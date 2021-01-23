@@ -1,21 +1,21 @@
-// Import the ORM to create functions that will interact with the database.
-var orm = require("../config/orm.js");
+// Import the ORM to create s that will interact with the database.
+const orm = require("../config/orm.js");
 
-var burger = {
-  //Self-identifying functions will manipulate the burgers model appropriately.
+const burger = {
+  //Self-identifying s will manipulate the burgers model appropriately.
   //Get all, update one, or select one are options.
-  selectAll: function(cb) {
-    orm.selectAll("burgers", function(res) {
+  selectAll: cb => {
+    orm.selectAll("burgers", (res) => {
       cb(res);
     });
   },
-  insertOne: function(cols, vals, cb) {
-    orm.insertOne("burgers", cols, vals, function(res) {
+  insertOne: (cols, vals, cb) => {
+    orm.insertOne("burgers", cols, vals, (res) => {
       cb(res);
     });
   },
-  updateOne: function(objColVals, condition, cb) {
-    orm.updateOne("burgers", objColVals, condition, function(res) {
+  updateOne: (objColVals, condition, cb) => {
+    orm.updateOne("burgers", objColVals, condition, (res) => {
       cb(res);
     });
   },

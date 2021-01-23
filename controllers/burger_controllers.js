@@ -1,12 +1,12 @@
-var express = require("express");
-var router = express.Router();
-var burger = require("../models/burger.js");
+const express = require("express");
+const router = express.Router();
+const burger = require("../models/burger.js");
 
 //routing page. Burger model, router, and express imported.
 //Get route
 router.get("/", function(req, res) {
   burger.selectAll(function(data) {
-    var burgerObject = {
+    const burgerObject = {
       burgers: data
     };
     console.log(burgerObject);
@@ -20,7 +20,7 @@ router.post("/api/burgers", function(req, res) {
     "burger_name", "devoured"
   ], [
     req.body.burger_name, req.body.devoured
-  ], function(result) {
+  ],(result) =>{
     res.json({ id: result.insertId });
   });
 });
@@ -34,8 +34,9 @@ router.put("/api/burgers/:id", function(req, res) {
   //ORM call that will actually update the burger database.
   burger.updateOne({
     devoured: req.body.devoured
-  }, condition, function(result) {
-    if (result.changedRows == 0) {
+  }, condition, result => {
+    const changedRows = result.changedRows;
+    if (changedRows) {
       return res.status(404).end();
     } else {
       res.status(200).end();
